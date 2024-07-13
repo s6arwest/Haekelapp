@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    {% block code %}{% endblock %}
+</head>
+
+<body>
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">×</a>
+        {% block links %}{% endblock %}
+
+    </div>
+
+    <div id="main">
+        <button class="btn openbtn" onclick="openSidebar()">☰</button>
+    </div>
+
+    {% block content %}{% endblock %}
+</body>
+
+</html>
